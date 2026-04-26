@@ -668,7 +668,7 @@ input[type=checkbox]+label .icon {
 
 .brand_logo {
     width: fit-content;
-    height: 40px;
+    height: 60px;
     background: #fff;
 }
 
@@ -3354,7 +3354,7 @@ html[dir=rtl] .faq_accordion-item .trigger {
 }
 
 .footer_secondary {
-    border-top: 1px solid #a9a9a9;
+    /* border-top: 1px solid #a9a9a9; */
     margin-top: 60px;
     padding-top: 60px
 }

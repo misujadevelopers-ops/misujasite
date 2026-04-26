@@ -115,7 +115,7 @@
                 <div class=hero_main>
                     <div class=numbers>
                         <div class=numbers_group>
-                            <h2 class="countNum number" data-suffix=+ data-value=128>20+</h2><span
+                            <h2 class="countNum number" data-suffix=+ data-value=128>100+</h2><span
                                 class=label>Projects</span>
                         </div>
                     </div>
@@ -201,9 +201,9 @@
                     <li class=projects_list-item>
                         <div class=media data-aos=zoom-in-right>
                             <picture>
-                                <source data-srcset=img/projects/01.webp srcset=img/projects/01.webp type=image/webp>
-                                <img class=lazy data-src=img/projects/01.jpg src=img/projects/01.jpg
-                                    alt="Jazzy Elite Construction Shopping Center">
+                                <source data-srcset=img/projects/03.webp srcset=img/projects/03.webp type=image/webp>
+                                <img class=lazy data-src=img/projects/03.jpg src=img/projects/03.jpg
+                                    alt="Installation a  Supply System">
                             </picture>
                         </div>
                         <!-- <div class=main>
@@ -237,10 +237,11 @@
                     <li class=projects_list-item>
                         <div class=media data-aos=zoom-in-right>
                             <picture>
-                                <source data-srcset=img/projects/03.webp srcset=img/projects/03.webp type=image/webp>
-                                <img class=lazy data-src=img/projects/03.jpg src=img/projects/03.jpg
-                                    alt="Installation a  Supply System">
+                                <source data-srcset=img/projects/01.webp srcset=img/projects/01.webp type=image/webp>
+                                <img class=lazy data-src=img/projects/01.jpg src=img/projects/01.jpg
+                                    alt="Jazzy Elite Construction Shopping Center">
                             </picture>
+
                         </div>
                         <!-- <div class=main>
                             <h3 class=main_title data-aos=fade-in><span class=text>Installation a Supply System</span>
@@ -549,18 +550,29 @@
                     <div class="contact_form-header section_header"><span class=subtitle>Contact us</span>
                         <h2 class=title>Do You Have any <span class=highlight>Questions?</span></h2>
                     </div>
-                    <form action=form.php
-                        class="contact_form-form contact-form d-flex flex-wrap justify-content-between" method=POST
-                        name=feedbackForm data-type=feedback><input
+                    <form action="" class="contact_form-form contact-form d-flex flex-wrap justify-content-between"
+                        method=POST name=feedbackForm data-type=feedback><input
                             class="contact-form_field contact-form_field--half field required" name=feedbackName
-                            id=feedbackName type=text placeholder="Full name"> <input
-                            class="contact-form_field contact-form_field--half field required" data-type=tel type=text
-                            name=feedbackTel id=feedbackTel placeholder=Phone> <input
-                            class="contact-form_field field required" data-type=email type=text name=feedbackEmail
-                            id=feedbackEmail placeholder="Email Address"> <textarea
-                            class="contact-form_field field required" data-type=message name=feedbackMessage
-                            id=feedbackMessage placeholder=Message></textarea> <button type=submit
-                            class="contact-form_btn btn">Send message</button></form>
+                            id=feedbackName type=text placeholder="Full name">
+                        <input type="text" class="contact-form_field contact-form_field--half field required"
+                            placeholder=Phone data-type=tel id="feedbackTel" maxlength="10"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        <input class="contact-form_field field required" data-type=email type=text name=feedbackEmail
+                            id=feedbackEmail placeholder="Email Address">
+                        <textarea id="feedbackMessage" class="contact-form_field field required" data-type=message
+                            name=feedbackMessage maxlength="150" placeholder="Message"></textarea>
+                        <small id="charCount">0/150</small>
+
+                        <script>
+                            const messageField = document.getElementById("feedbackMessage");
+                            const counter = document.getElementById("charCount");
+
+                            messageField.addEventListener("input", function () {
+                                counter.textContent = messageField.value.length + "/150";
+                            });
+                        </script>
+                        <button type=submit class="contact-form_btn btn">Send message</button>
+                    </form>
                 </div>
                 <div class=contact_info>
                     <h3 class=contact_info-header>Are You Going to Implement Project?</h3>
@@ -594,10 +606,17 @@
     <footer class="footer primary-bg">
         <div class=container>
             <div class=footer_main>
-                <div class=footer_main-block><a class=brand href=index.html><img class=brand_logo
-                            src="./img/header-logo.png" alt="Misuja Developers"> </a>
-                    <p class="footer_main-block_subtitle footer_main-block_subtitle--brand">Libero volutpat sed cras
-                        ornare arcu dui vivamus. Ac tortor dignissim convallis aenean et tortor at risus viverra</p>
+                <div class=footer_main-block>
+                    <a class=brand href=index.html>
+                        <div class="">
+                            <img width="100" src="./img/misujamd.jpeg" alt="Misuja Developers">
+                            <img class="brand_logo mt-2" width="100" style="width: -webkit-fill-available;"
+                                src="./img/header-logo.png" alt="Misuja Developers">
+                        </div>
+                    </a>
+                    <p class="footer_main-block_subtitle footer_main-block_subtitle--brand">We are committed to
+                        delivering
+                        high-quality construction solutions through expertise, innovation, and precision.</p>
                 </div>
                 <div class=footer_main-block>
                     <h4 class=footer_main-block_title>Contacts</h4>
@@ -608,6 +627,20 @@
                         <div class=group><span>H.No 30 Navya Lake View,</span><span> Narendra Nagar Colony,</span>
                             <span> Ameenpur Sangaredd,</span><span> Telangana - 502032</span>
                         </div>
+                    </div>
+                    <div class="footer_secondary text-center">
+                        <!-- <p class=footer_secondary-copyright><span>Misuja Developers</span> <span>All
+                        rights reserved Copyrights <span id=currentYear></span></span></p> -->
+                        <ul class="socials text-center">
+                            <li class=socials_item><a class=socials_item-link href=# target=_blank
+                                    rel="noopener noreferrer" aria-label=Facebook><i class=icon-facebook></i></a></li>
+                            <li class=socials_item><a class=socials_item-link href=# target=_blank
+                                    rel="noopener noreferrer" aria-label=Instagram><i class=icon-instagram></i></a></li>
+                            <li class=socials_item><a class=socials_item-link href=# target=_blank
+                                    rel="noopener noreferrer" aria-label=Twitter><i class=icon-twitter></i></a></li>
+                            <li class=socials_item><a class=socials_item-link href=# target=_blank
+                                    rel="noopener noreferrer" aria-label=WhatsApp><i class=icon-whatsapp></i></a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class=footer_main-block>
@@ -622,24 +655,70 @@
                     </ul>
                 </div>
             </div>
-            <div class=footer_secondary>
-                <!-- <p class=footer_secondary-copyright><span>Misuja Developers</span> <span>All
-                        rights reserved Copyrights <span id=currentYear></span></span></p> -->
-                <ul class=socials>
-                    <li class=socials_item><a class=socials_item-link href=# target=_blank rel="noopener noreferrer"
-                            aria-label=Facebook><i class=icon-facebook></i></a></li>
-                    <li class=socials_item><a class=socials_item-link href=# target=_blank rel="noopener noreferrer"
-                            aria-label=Instagram><i class=icon-instagram></i></a></li>
-                    <li class=socials_item><a class=socials_item-link href=# target=_blank rel="noopener noreferrer"
-                            aria-label=Twitter><i class=icon-twitter></i></a></li>
-                    <li class=socials_item><a class=socials_item-link href=# target=_blank rel="noopener noreferrer"
-                            aria-label=WhatsApp><i class=icon-whatsapp></i></a></li>
-                </ul>
-            </div>
+
         </div>
         <!-- </footer><button id=scrollTrigger type=button><i class="icon icon-arrow_right"></i></button> -->
         <script src=js/common.min.js></script>
         <!-- <script src=js/index.min.js></script> -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const form = document.querySelector("form[name='feedbackForm']");
+
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    // Get values
+                    let name = document.getElementById("feedbackName").value.trim();
+                    let phone = document.getElementById("feedbackTel").value.trim();
+                    let email = document.getElementById("feedbackEmail").value.trim();
+                    let message = document.getElementById("feedbackMessage").value.trim();
+
+                    // Validation
+                    if (!name) {
+                        alert("Please enter your full name");
+                        return;
+                    }
+
+                    // Phone validation (India)
+                    let phoneRegex = /^[6-9]\d{9}$/;
+                    if (!phoneRegex.test(phone)) {
+                        alert("Enter valid 10-digit phone number");
+                        return;
+                    }
+
+                    // Email validation
+                    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert("Enter valid email address");
+                        return;
+                    }
+
+                    if (!message || message.length < 5) {
+                        alert("Message should be at least 5 characters");
+                        return;
+                    }
+
+                    // Format WhatsApp message
+                    let text = `*New Enquiry*
+
+*Full Name:* ${name}
+*Phone:* ${phone}
+*Email:* ${email}
+*Message:* ${message}`;
+
+                    // Replace with your WhatsApp number
+                    let whatsappNumber = "919491122118";
+
+                    let url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+                    // Open WhatsApp
+                    window.open(url, "_blank");
+
+                    // Optional: reset form
+                    form.reset();
+                });
+            });
+        </script>
 </body>
 
 </html>
