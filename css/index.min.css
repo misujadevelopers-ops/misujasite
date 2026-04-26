@@ -145,7 +145,7 @@ html.fixed {
 }
 
 body {
-    font-family: Roboto, sans-serif;
+    font-family: Montserrat, sans-serif;
     font-size: 17px;
     line-height: 1.5;
     color: #000810;
@@ -666,10 +666,21 @@ input[type=checkbox]+label .icon {
     line-height: 1
 }
 
-.brand_logo {
+.brand_logo,
+.brand_logo_footer {
     width: fit-content;
     height: 60px;
     background: #fff;
+}
+
+@media (max-width: 768px) {
+    .brand_logo {
+        height: 40px;
+    }
+
+    .brand_logo_footer {
+        height: 66px;
+    }
 }
 
 .tags {
@@ -2265,7 +2276,8 @@ html[dir=rtl] #scrollTrigger {
     padding: 30px;
     -webkit-transition: .3s ease-in-out;
     -o-transition: .3s ease-in-out;
-    transition: .3s ease-in-out
+    transition: .3s ease-in-out;
+    min-height: 390px;
 }
 
 .services_list-item .wrapper:hover {
@@ -3548,7 +3560,8 @@ html[dir=rtl] .footer_main-block_nav .list-item .link .icon {
     }
 }
 
-.header--pinned{
+.header--pinned {
     background: #031f40;
 }
+
 /*# sourceMappingURL=../sourcemaps/index.css.map */
